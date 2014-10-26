@@ -1,0 +1,31 @@
+{% extends "AuttaaWebBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h1 class="cover-heading title">Auttaa</h1>
+                    </div>
+                </div>
+                <div class="inner cover">
+                    <h1 class="cover-heading">Heroes among us.</h1>
+                    <p class="lead">
+                        {{ form_start(form) }}
+                        {{ form_widget(form.email,{'attr':{'class': 'col-lg-9','style' :'height: 35px', "placeholder":"Type your email" }}
+                        )}}
+                        {{ form_end(form) }}
+                    </p>
+                </div>
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>© Auttaa 2014. All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
+{% endblock %}
