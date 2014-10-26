@@ -1,12 +1,12 @@
 _welcome:
     pattern:  /
-    defaults: { _controller: AuttaaWebBundle:Main:index }
+    defaults: { _controller: AuttaaWebBundle:Index:index }
 
-_demo_secured:
-    resource: "@AuttaaWebBundle/Controller/SecuredController.php"
-    type:     annotation
-
-_main:
-    resource: "@AuttaaWebBundle/Controller/MainController.php"
-    type:     annotation
-    prefix:   /demo
+#_demo_secured:
+#    resource: "@AuttaaWebBundle/Controller/SecuredController.php"
+#    type:     annotation
+#
+#_main:
+#    resource: "@AuttaaWebBundle/Controller/MainController.php"
+#    type:     annotation
+#    prefix:   /demo
