@@ -10,8 +10,7 @@ class SubscribeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('email', NULL, array('required' => true));
-        $builder->add('Get early access', 'submit', array('attr' => array('class'=>'btn btn-success')));
+        $builder->add('email', NULL, array('required' => false));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

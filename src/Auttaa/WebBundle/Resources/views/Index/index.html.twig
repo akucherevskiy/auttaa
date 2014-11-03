@@ -12,10 +12,15 @@
                 <div class="inner cover">
                     <h1 class="cover-heading">Heroes among us.</h1>
                     <p class="lead">
-                        {{ form_start(form) }}
-                        {{ form_widget(form.email,{'attr':{'class': 'col-lg-9','style' :'height: 35px', "placeholder":"Type your email" }}
-                        )}}
-                        {{ form_end(form) }}
+                    {%  if saved == 1%}
+                        Thanks for your interest! <br>
+                        Check your email
+                    {% else %}
+                    <form method="POST" {{form_enctype(form)}} >
+                        {{ form_widget(form.email,{'attr':{'class': 'col-lg-9','style' :'height: 35px', "placeholder":"Type your email" }})}}
+                        <input type = "submit" class='btn btn-success'  value='Get early access'>
+                    </form>
+                    {% endif %}
                     </p>
                 </div>
                 <div class="mastfoot">

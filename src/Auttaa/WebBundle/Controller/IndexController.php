@@ -17,18 +17,21 @@ class IndexController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted()) {
             $em = $this->getDoctrine()->getManager();
+            $user->setUsername($user->getEmail().time());
+            $user_password_salt = '1232hesfls;dfok23';
+            $user->setPassword($user->getEmail() . $user_password_salt);
             $em->persist($user);
             $em->flush();
 
             $session = $this->getRequest()->getSession();
             $session->getFlashBag()->add('message', 'Article saved!');
 
-            return $this->redirect($this->generateUrl('/'));
+            return $this->render('AuttaaWebBundle:Index:index.html.twig', array('form' => $form->createView(), 'saved' => 1));
         }
 
-        return $this->render('AuttaaWebBundle:Index:index.html.twig', array('form' => $form->createView()));
+        return $this->render('AuttaaWebBundle:Index:index.html.twig', array('form' => $form->createView(), 'saved' => 0));
     }
 
 
